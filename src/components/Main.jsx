@@ -151,9 +151,9 @@ const Main = () => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=79aea58432fcfc27ddfb1943d84a29e8`;
 
   return (
-    <div>
+    <div >
       <div
-        className="  pr-3 pl-3 bg-cover max-w-[450px] mt-2 mb-2 h-[100vh]  mx-auto "
+        className="  pr-3 pl-3 bg-cover max-w-[100vh] mt-2 mb-2 h-[100vh]  mx-auto "
         style={backStyle}
       >
         <form
@@ -180,8 +180,8 @@ const Main = () => {
             ) : null}
             {apiData.main ? (
               <div>
-                <p className="text-7xl font-bold text-white">
-                  {apiData.main.temp} C
+                <p className="text-6xl sm:text-8xl font-bold text-white">
+                  {apiData.main.temp} °C
                 </p>
               </div>
             ) : null}
@@ -197,37 +197,37 @@ const Main = () => {
             ) : null}
           </div>
           {apiData.main ? (
-            <div className="flex p-2 items-center border-2 max-w-[450px] bg-[rgba(255,255,255,.3)] justify-around rounded-lg">
-              <div className=" border-r-2 pr-5 text-center">
+            <div className="block  sm:flex  text-[10px] md:text-[15px] p-2 sm:items-center border-2 max-w-[450px] bg-[rgba(255,255,255,.3)] justify-around rounded-lg">
+              <div className="border-b-2 sm:border-b-0 sm:border-r-2 pr-5 text-center">
                 {apiData.wind ? (
-                  <div className="flex flex-col items-center  gap-">
+                  <div className="flex flex-col items-center ">
                     <img className="w-7 h-7" src={windIcon.url} alt="" />
-                    <p className="text-lg font-bold text-gray-600">
+                    <p className="text-sm md:text-lg font-bold text-gray-600">
                       {apiData.wind.speed} MPH
                     </p>
-                    <p>Wind speed</p>
+                    <p className="text-lg">Wind speed</p>
                   </div>
                 ) : null}
               </div>
               <div className="">
                 {apiData.main ? (
-                  <div className="text-center items-center flex flex-col  ">
+                  <div className="text-center items-center pt-3 pb-3 sm:pt-0 sm:pb-0 flex flex-col  ">
                     <img className="w-7 h-7 " src={humidityIcon.url} alt="" />
-                    <p className="text-lg font-bold text-gray-600">
+                    <p className="text-sm md:text-lg font-bold text-gray-600">
                       {apiData.main.humidity} %
                     </p>
-                    <p>Humidity</p>
+                    <p className="text-lg">Humidity</p>
                   </div>
                 ) : null}
               </div>
-              <div className=" text-center border-l-2 pl-5">
+              <div className=" text-center border-t-2 sm:border-t-0 sm:border-l-2 pl-4">
                 {apiData.main ? (
                   <div className="flex flex-col items-center">
                     <img className="w-7 h-7" src={tempIcon.url} alt="" />
-                    <p className="text-lg font-bold text-gray-600">
-                      {apiData.main.temp_min} C
-                    </p>{" "}
-                    <div>Min</div>
+                    <p className="text- md:text-lg font-bold text-gray-600">
+                      {apiData.main.temp_min} °C
+                    </p>
+                    <div className="text-lg">Min</div>
                   </div>
                 ) : null}
               </div>
