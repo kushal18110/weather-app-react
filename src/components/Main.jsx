@@ -173,7 +173,7 @@ const Main = () => {
         <div className=" text-center pt-2 text-sm">
           {apiData.main ? <h2 className="text-white ">{time}</h2> : null}
         </div>
-        <div className="flex flex-col gap-[200px]  pt-10">
+        <div className="flex flex-col gap-[100px] sm:gap-[200px]  pt-10">
           <div className=" flex flex-col gap-2 pt-5   ">
             {apiData ? (
               <h1 className=" text-2xl text-white">{apiData.name}</h1>
